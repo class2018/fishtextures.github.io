@@ -13,18 +13,6 @@ div.homeworktext {
 h2 {
 	color:#C40000;
 }
-#btninfo {  
-    position:relative;
-		top: 487px;
-		left: 1275px;
-}
-#btninfo2 {  
-    position:relative;
-		top: 76px;
-		left: 395px;
-}
-#btninfo3 {  
-    position:relative;
-		top: 78px;
-		left: 335px;
+#btninfo2 {
+	margin-bottom: 8px;
 }
