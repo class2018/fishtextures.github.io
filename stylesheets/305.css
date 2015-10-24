@@ -2,10 +2,24 @@ body {
 	margin-left: 50px;
 	color:#C40000;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
   color:#F7F7F7;
 
 }
 div.homeworktext {
 	padding-left: 50px;
+	color:#C40000;
+}
+h2 {
+	color:#C40000;
+}
+#btninfo {  
+    position:absolute;
+		top: 487px;
+		left: 1275px;
+}
+#btninfo2 {  
+    position:absolute;
+		top: 76px;
+		left: 395px;
 }
