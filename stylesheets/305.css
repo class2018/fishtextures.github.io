@@ -14,17 +14,17 @@ h2 {
 	color:#C40000;
 }
 #btninfo {  
-    position:absolute;
+    position:relative;
 		top: 487px;
 		left: 1275px;
 }
 #btninfo2 {  
-    position:absolute;
+    position:relative;
 		top: 76px;
 		left: 395px;
 }
 #btninfo3 {  
-    position:absolute;
+    position:relative;
 		top: 78px;
 		left: 335px;
 }
