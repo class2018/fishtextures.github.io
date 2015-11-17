@@ -73,34 +73,7 @@
 <br/>
 <br/>
 <a class="btn btn-danger" role="button" id="btninfo2">Pointless Button</a>
-var counts = {},
-    track  = document.getElementsByClassName('click-tracking');
 
-for (var i = 0, max = track.length; i < max; i++) {
-    track[i].addEventListener('click', function() {
-        // Caching...
-        var name = this.name,
-            ele  = document.getElementById(name + '-count') || false;
-        
-        // Check if the array index exists, if it doesn't create it with a value
-        // of '0' by default
-        if (typeof counts[name] === 'undefined') {
-            counts[name] = 0;
-        }
-        
-        // Check if the element exists, if it doesn't create it
-        if (!ele) {
-            var ele    = document.createElement('div');
-                ele.id = name + '-count';
-            
-            // Insert the new element after the next sibling so it falls after this
-            // element in the DOM
-            this.parentNode.insertBefore(ele, this.nextSibling);
-        }
-        
-        ele.innerHTML = counts[name]++;
-    });
-}
 
        
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
