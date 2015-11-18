@@ -53,11 +53,11 @@
 <br/>	   	
 	   	<b>Writing:</b> This I Believe essay draft 500-600 words FINAL (FRI 11/20/15) <br/>
 <br/>
-	    	<b>Math:</b> ACE 3.4 #22-25,40,53a+b (WED), Finish prob 3.4 (WED) <br/>
+	    	<b>Math:</b> ACE 3.4 #22-25,40,53a+b (WED), Finish prob 3.4 (WED), WS (FRI) <br/>
 <br/>
 	       <b>Science:</b> None <br/>
 <br/>
-	        <b>Social Studies:</b> Map reflection (THURS), Doc F (TUES) <br/>
+	        <b>Social Studies:</b> Map reflection (THURS), Doc F (TUES), Research (FRI) <br/>
 <br/>
 	        <b>Word Study:</b> Test (THURS) <br/>
 <br/>	        
@@ -73,6 +73,44 @@
 <br/>
 <br/>
 <a class="btn btn-danger" role="button" id="btninfo2">Pointless Button</a>
+<script>var counts = {},
+    track  = document.getElementsByClassName('btn btn-danger');
+
+for (var i = 0, max = track.length; i < max; i++) {
+    track[i].addEventListener('click', function() {
+        // Caching...
+        var name = this.name,
+            ele  = document.getElementById(name + '-count') || false;
+        
+        // Check if the array index exists, if it doesn't create it with a value
+        // of '0' by default
+        if (typeof counts[name] === 'undefined') {
+            counts[name] = 1;
+        }
+
+            
+        if (counts[name] > 1) {
+        alert("Achievement Get: POINTLESS! (to go to secret webpage, press OK)");
+        location.reload();
+        location.href = './secret.html'
+
+        }
+        // Check if the element exists, if it doesn't create it
+        if (!ele) {
+            var ele    = document.createElement('div');
+                ele.id = name + '-count';
+            
+            // Insert the new element after the next sibling so it falls after this
+            // element in the DOM
+            this.parentNode.insertBefore(ele, this.nextSibling);
+        }
+
+        
+        ele.innerHTML = counts[name]++;
+    });
+}
+</script>
+
 
 
        
