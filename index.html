@@ -10,6 +10,8 @@
     <!-- Bootstrap -->
     <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="stylesheets/305.css" rel="stylesheet">
+     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -73,7 +75,7 @@
 <br/>
 <br/>
 <br/>
-<a class="btn btn-danger" role="button" id="btninfo2">Pointless Button</a>
+<a class="btn btn-danger" role="button" id="btn">Pointless Button</a>
 <script>var counts = {},
     track  = document.getElementsByClassName('btn btn-danger');
 
@@ -110,6 +112,22 @@ for (var i = 0, max = track.length; i < max; i++) {
         ele.innerHTML = counts[name]++;
     });
 }
+</script>
+<script> var x = new Firebase('https://sizzling-fire-7530.firebaseio.com/Button');
+
+x.on('value', function f(s) {
+    $('#counting').text(0 + s.val());
+});
+
+$('#btn').click(function() {
+  x.transaction(function(current_value) {
+    return current_value + 1;
+  });
+});
+
+$('#reset').click(function() {
+    x.set(0);
+});
 </script>
 
 
