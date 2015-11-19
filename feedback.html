@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Fun Stuff page info</title>
+    <title>Feedback</title>
 
     <!-- Bootstrap -->
     <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="stylesheets/305.css" rel="stylesheet">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,7 +38,7 @@
             <li><a href="./monster.html">Monster Projects</a></li>
             <li><a href="./newspaper.html">Newspaper</a></li>
             <li><a href="./books.html">Book Stuff</a></li>
-            <li><a href="./feedback.html">Feedback</a></li>
+            <li class="active"><a href="./feedback.html">Feedback</a></li>
            <!-- <li><a href="#contact">Contact</a></li> -->
           </ul>
         </div><!--/.nav-collapse -->
@@ -47,11 +49,30 @@
     <br/>
     <br/>
     <br/>
-    <h1>Monster info</h1>
-    <br/>
-   		<h4><div class="homeworktext">
-	   		This is a section of the website suggested by Mr. Schoenbeck. When it is finished, it will contain all of the monster stories, and if anyone filmed a movie, that will be on there too. After we present, if you guys wouldn't mind sending me your monster stories via e-mail as well as your movie. The movie would have to be unlisted on youtube and you need to e-mail me the link. If you wrote your monster story, simply give it to me and I'll type it.
-        </div></h4>
+    <h1>Feedback:</h1>
+   <script>alert("Please enter your name and feedback, the press enter. Please only do this once.");</script>
+    <div id='messagesDiv'></div>
+    <input type='text' id='nameInput' placeholder='Name'>
+    <input type='text' id='messageInput' placeholder='Feedback'>
+    <script>
+      var myDataRef = new Firebase('https://sizzling-fire-7530.firebaseio.com/');
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var text = $('#messageInput').val();
+          myDataRef.push({name: name, text: text});
+          $('#messageInput').val('');
+          alert('Thanks for the feedback!');
+          location.href="./index.html"
+        }
+      });
+     
+      function displayChatMessage(name, text) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+
+      };
+    </script>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
