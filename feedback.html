@@ -63,10 +63,12 @@
           myDataRef.push({name: name, text: text});
           $('#messageInput').val('');
           alert('Thanks for the feedback!');
-          location.href="./index.html"
+          
         }
       });
-     
+     if (nameInput == "CAMEL") {
+       location.href="./fun.html"
+     }
       function displayChatMessage(name, text) {
         $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
