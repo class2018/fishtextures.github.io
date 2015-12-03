@@ -57,8 +57,14 @@
    		</h4>
    		<br/>
    		<br/>
-   		<h1>Books reccommended weekly by the literacy committee:</h1>
+   		<input type='text' id='passInput' placeholder='Administrator Password'>
 
+<script>
+    var apass = $('#passInput').val();
+    if (apass == "EvanTAdministatorPassword") {
+      location.href="./index.html"
+    }
+</script>
 
        
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
