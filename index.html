@@ -80,6 +80,7 @@
 <script>
     temp = "";
     lemp = "";
+    kemp = "";
     var ref = new Firebase("https://sizzling-fire-7530.firebaseio.com/bookdata");
     ref.on("value", function(snapshot) {
       temp = snapshot.val();
@@ -95,6 +96,8 @@
     ref2.on("value", function(snapshot) {
       lemp = snapshot.val();
       },
+
+    
 
      
      $('#passInput').keypress(function (e) {
@@ -115,8 +118,10 @@
 <br/>
 <br/>
 <br/>
+
 <a class="btn btn-danger" role="button" id="btn">Pointless Button</a>
-<script>var counts = {},
+<script>
+var counts = {},
     track  = document.getElementsByClassName('btn btn-danger');
 
 for (var i = 0, max = track.length; i < max; i++) {
@@ -167,6 +172,20 @@ $('#btn').click(function() {
 $('#reset').click(function() {
     x.set(0);
 });
+</script>
+<br/>
+<h1>This button has been clicked <div id="buttontext">
+
+</div>
+</h1> 
+<script>
+kemp="";
+var ref3 = new Firebase("https://sizzling-fire-7530.firebaseio.com/Button");
+    ref3.on("value", function(snapshot) {
+      kemp = snapshot.val() + "";
+      var btn = document.getElementById("buttontext");
+      btn.innerHTML = kemp.concat(" times");
+      });
 </script>
 
 
