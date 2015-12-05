@@ -74,7 +74,43 @@
 <br/>
           
         </div></h4>
-<br/>
+
+<input type='password' id='passInput' placeholder='Secret Password'>
+
+<script>
+    temp = "";
+    lemp = "";
+    var ref = new Firebase("https://sizzling-fire-7530.firebaseio.com/bookdata");
+    ref.on("value", function(snapshot) {
+      temp = snapshot.val();
+      }, 
+
+
+
+  function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+    })
+
+     var ref2 = new Firebase("https://sizzling-fire-7530.firebaseio.com/link");
+    ref2.on("value", function(snapshot) {
+      lemp = snapshot.val();
+      },
+
+     
+     $('#passInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var apass = $('#passInput').val();
+          $('#passInput').val(''); 
+          }
+    if (apass == temp) {
+      location.href=lemp
+      
+    } 
+    
+}));
+
+   
+</script>
 <br/>
 <br/>
 <br/>
