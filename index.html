@@ -49,7 +49,7 @@
     <br/>
     <br/>
     <br/>
-    <h1>Homework 12/10/15  <a href="./whatsnew.html" class="btn btn-warning" role="button" id="btninfo2">WHAT'S NEW 12/4/15</a></h1>
+    <h1>Homework 12/10/15  <a href="./whatsnew.html" class="btn btn-warning" role="button" id="btninfo2">WHAT'S NEW 12/12/15</a></h1>
     <br/>
    		<h4><div class="homeworktext">
 	   	<b>Reading:</b> Lit Circle goal + job (FRI), Hard copy of draft of IRP handout (FRI), Animal Farm intro paragraph (FRI) <br/>
@@ -83,42 +83,42 @@ sap.onclick = function(){
 }
     </script>
 
-<input type='password' id='passInput' placeholder='Secret Password'>
-
+<!-- <input type='password' id='passInput' placeholder='Secret Password'> -->
+<a class="btn btn-success" role="button" href="https://classof20181.appspot.com/">Click here to go to secret password</a>
 <script>
-    temp = "";
-    lemp = "";
-    kemp = "";
-    var ref = new Firebase("https://sizzling-fire-7530.firebaseio.com/bookdata");
-    ref.on("value", function(snapshot) {
-      temp = snapshot.val();
-      }, 
+//     temp = "";
+//     lemp = "";
+//     kemp = "";
+//     var ref = new Firebase("https://sizzling-fire-7530.firebaseio.com/bookdata");
+//     ref.on("value", function(snapshot) {
+//       temp = snapshot.val();
+//       }, 
 
 
 
-  function (errorObject) {
-    console.log("The read failed: " + errorObject.code);
-    })
+//   function (errorObject) {
+//     console.log("The read failed: " + errorObject.code);
+//     })
 
-     var ref2 = new Firebase("https://sizzling-fire-7530.firebaseio.com/link");
-    ref2.on("value", function(snapshot) {
-      lemp = snapshot.val();
-      },
+//      var ref2 = new Firebase("https://sizzling-fire-7530.firebaseio.com/link");
+//     ref2.on("value", function(snapshot) {
+//       lemp = snapshot.val();
+//       },
 
     
 
      
-     $('#passInput').keypress(function (e) {
-        if (e.keyCode == 13) {
-          var apass = $('#passInput').val();
-          $('#passInput').val(''); 
-          }
-    if (apass == temp) {
-      location.href=lemp
+//      $('#passInput').keypress(function (e) {
+//         if (e.keyCode == 13) {
+//           var apass = $('#passInput').val();
+//           $('#passInput').val(''); 
+//           }
+//     if (apass == temp) {
+//       location.href=lemp
       
-    } 
+//     } 
     
-}));
+// }));
 
    
 </script>
