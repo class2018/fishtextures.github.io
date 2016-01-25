@@ -30,8 +30,10 @@
     <br/>
     <br/>
     <br/>
-    <h1>Server status: <b><u>INACTIVE</u></b></h1><br/>
-    <br/>
+    <h1>Server status: <div id="servertext></h1><br/>
+   
+</div>
+ <br/>
     <br/>
     <br/>
      <a class="btn btn-success" role="button" id="btn">Start Server</a><br/>
@@ -39,8 +41,16 @@
       <a class="btn btn-danger" role="button" id="btn">Stop Server</a><br/>
       <br/>
        <a class="btn btn-info" role="button" id="btn">Monitor Server</a><br/>
-    
-    
+    <br/>
+    <script>
+zemp="";
+var ref3 = new Firebase("https://sizzling-fire-7530.firebaseio.com/Server");
+    ref3.on("value", function(snapshot) {
+      kemp = snapshot.val() + "";
+      var btn = document.getElementById("servertext");
+      btn.innerHTML = zemp.concat(" ");
+      });
+</script>
     
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -49,4 +59,3 @@
     <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
   </body>
 </html>
-
